@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>CSS3菜单</title>
+<style>
+*{padding:0;margin:0;}
+nav{margin:20px auto; width:300px; height:35px; position:relative;}
+ul{list-style:none;}
+
+.menu .menu_li{width:100px;height:35px; line-height:35px; float:left; background:#F90; margin:0 2px; text-align:center; border-radius:2px; text-shadow:1px 1px 1px #333; box-shadow:1px 1px 1px #999; cursor:pointer; position:relative; overflow:hidden;transition:all 0.2s linear;}
+.menu .menu_li ul{width:100px;height:auto;margin:1px 0 0 0; border:1px #eee solid; border-radius:5px; }
+.menu .menu_li ul li{width:100px;height:35px;line-height:35px; text-align:center;background:#EC7F09;border-radius:1px;border-bottom:1px #ccc solid;}
+
+.menu .menu_li:hover{height:180px;}
+</style>
+</head>
+
+<body>
+<nav>
+	<ul class="menu">
+    	<li class="menu_li">首页
+        	<ul>
+            	<a><li>111</li></a>
+                <a><li>111</li></a>
+                <a><li>111</li></a>
+                <a><li>111</li></a>
+            </ul>
+        </li>
+        <li class="menu_li">笔记
+        	<ul>
+            	<a><li>111</li></a>
+                <a><li>111</li></a>
+                <a><li>111</li></a>
+                <a><li>111</li></a>
+            </ul>
+        </li>
+    </ul>
+</nav>
+</body>
+</html>
