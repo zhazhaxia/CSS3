@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+#div1
+{
+position: relative;
+height: 150px;
+width: 150px;
+margin: 50px;
+padding:10px;
+border: 1px solid black;
+-webkit-perspective:150; /* 以背景模版作为透视距离 */
+}
+
+#div2
+{
+
+padding:50px;
+position: absolute;
+border: 1px solid black;
+background-color: yellow;
+/*-webkit-backface-visibility:hidden;背部是否可见，此处设不可见*/
+-webkit-transform-origin:left;/*以左边作为旋转原点*/
+-webkit-transform: rotateY(0deg);/*按Y轴旋转*/
+-webkit-transform-style:preserve-3d;
+transition:all 2s;
+}
+#div2:hover{
+-webkit-transform: rotateY(120deg);
+}
+</style>
+</head>
+
+<body>
+
+<div id="div1">
+  <div id="div2">HELLO</div>
+</div>
+ 
+</body>
+</html>
