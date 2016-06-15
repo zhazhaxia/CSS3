@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"> 
+<title>滑动测试</title>
+<link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+
+<body>
+<div id="touchBox" style="background-color:red;width:240px;height:240px;margin:0 auto;">滑动层</div>
+
+</body>
+</html>
+
+<script>
+
+
+window.onload=function(){
+var startX,startY,endX,endY
+
+//假定接受手指触摸事件的Dom对象id是"touchBox"
+document.getElementById("touchBox").addEventListener("touchstart", touchStart, false);
+document.getElementById("touchBox").addEventListener("touchmove", touchMove, false);
+document.getElementById("touchBox").addEventListener("touchend", touchEnd, false);
+function touchStart(event){
+ var touch = event.touches[0];
+ startX= touch.pageX
+ startY = touch.pageY;
+}
+function touchMove(event){	
+ var touch = event.touches[0];
+ endX=(touch.pageX-startX);
+ endY=(startY-touch.pageY);
+}
+function touchEnd(event){
+    //alert('endX: '+endX);
+    //alert('endY: '+endY);
+    if(endX>0){
+        alert('右')
+    }else if(endX < 0){
+        alert('左')
+    }else{
+
+    }
+}
+};
+</script>

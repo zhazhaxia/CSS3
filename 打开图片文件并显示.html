@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>打开图片文件并显示</title>
+</head>
+
+<body>
+<input type="file" id="file"><bt>
+<img id="img" />
+</body>
+<script>
+
+var file=document.getElementById('file'),
+	img=document.getElementById('img');
+	file.addEventListener('change',function(){
+		var reader=new FileReader();//打开filereader对象
+		reader.readAsDataURL(this.files[0]);//将读取文件转为URL数据
+		reader.onloadend=function(e){//等待reader对象加载完毕
+			img.src=e.target.result;//获取URL
+			console.log(e.target);
+		}	
+	},false);
+</script>
+</html>
